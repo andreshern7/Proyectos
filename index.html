@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario Inscripcion</title>
+  <link rel="stylesheet" href="style.css">
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+          $("#myForm")[0].reset()
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form id="myForm" method="POST">
+        <div class="formbold-input-flex">
+          <div>
+              <input
+              type="text"
+              name="nombres"
+              id="firstname"
+              placeholder="Roberto"
+              class="formbold-form-input"
+              />
+              <label for="firstname" class="formbold-form-label"> Nombres </label>
+          </div>
+          <div>
+              <input
+              type="text"
+              name="apellidos"
+              id="lastname"
+              placeholder="Prado"
+              class="formbold-form-input"
+              />
+              <label for="lastname" class="formbold-form-label"> Apellidos </label>
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+              <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="test@gmail.com"
+              class="formbold-form-input"
+              />
+              <label for="email" class="formbold-form-label"> Email </label>
+          </div>
+          <div>
+              <input
+              type="text"
+              name="celular"
+              id="phone"
+              placeholder="3101234567"
+              class="formbold-form-input"
+              />
+              <label for="phone" class="formbold-form-label"> Celular </label>
+          </div>
+          <div>
+            <input
+            type="number"
+            name="edad"
+            id="age"
+            placeholder="18"
+            class="formbold-form-input"
+            />
+            <label for="age" class="formbold-form-label"> Edad </label>
+          </div>
+        </div>
+      </form>
+      <button class="formbold-btn" onclick="SubForm()">
+          Enviar
+      </button>
+  </div>
+</div>
+</body>
+</html>
