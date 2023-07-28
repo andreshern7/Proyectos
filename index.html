@@ -53,6 +53,16 @@
 
         <div class="formbold-input-flex">
           <div>
+            <input
+            type="number"
+            name="edad"
+            id="age"
+            placeholder="18"
+            class="formbold-form-input"
+            />
+            <label for="age" class="formbold-form-label"> Edad </label>
+          </div>
+          <div>
               <input
               type="email"
               name="email"
@@ -72,17 +82,30 @@
               />
               <label for="phone" class="formbold-form-label"> Celular </label>
           </div>
+        </div>
+        <div class="formbold-input-flex">
           <div>
-            <input
-            type="number"
-            name="edad"
-            id="age"
-            placeholder="18"
-            class="formbold-form-input"
-            />
-            <label for="age" class="formbold-form-label"> Edad </label>
+              <input
+              type="number"
+              name="no_identificacion"
+              id="phone"
+              placeholder="4311862"
+              class="formbold-form-input"
+              />
+              <label for="phone" class="formbold-form-label"> Numero Identificacion </label>
+          </div>
+          <div>
+              <input
+              type="date"
+              name="expedicion"
+              id="phone"
+              placeholder="13/07/2005"
+              class="formbold-form-input"
+              />
+              <label for="phone" class="formbold-form-label"> Fecha de expedicion</label>
           </div>
         </div>
+        
       </form>
       <button class="formbold-btn" onclick="SubForm()">
           Enviar
