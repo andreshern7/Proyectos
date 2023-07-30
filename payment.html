@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario Inscripcion</title>
+  <link rel="stylesheet" href="style.css">
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous">
+  </script>
+  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <h1>PAYMENT INFO</h1>
+    <p>Este es tu codigo de Inscripcion. Anotalo es muy importante para validar y reservar tu pago</p>
+    <p id="code_id">CODE INFO</p>
+  <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        // 👇️ key1=value1&key2=value2
+        console.log(urlParams.toString());
+        const code_id = urlParams.get('code_id');
+        console.log(code_id); // 👉️ value1
+        document.querySelector("#code_id").innerHTML = code_id;
+    </script>
+</body>
+</html>

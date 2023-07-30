@@ -2,115 +2,130 @@
 <html>
 <head>
 	<title>Formulario Inscripcion</title>
-  <link rel="stylesheet" href="style.css">
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous"></script>
-	<script>
-		function SubForm (){
-			$.ajax({
-				url:"https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/",
-				type:"post",
-				data:$("#myForm").serializeArray(),
-				success: function(){
-					alert("Form Data Submitted :)")
-          $("#myForm")[0].reset()
-				},
-				error: function(){
-					alert("There was an error :(")
-				}
-			});
-		}
-	</script>
+		crossorigin="anonymous">
+  </script>
+  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="title-wrap center">
+  <h1 class="title">STAND-UP</h1>
+  <h3 class="subtitle">comedy</h3>
+</div>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
-    <form id="myForm" method="POST">
+    <form id="myForm" action="#" method="POST">
         <div class="formbold-input-flex">
           <div>
               <input
+              required
               type="text"
               name="nombres"
               id="firstname"
-              placeholder="Roberto"
+              placeholder="Nombre"
               class="formbold-form-input"
               />
-              <label for="firstname" class="formbold-form-label"> Nombres </label>
+              <!-- <label for="firstname" class="formbold-form-label"> Nombres </label> -->
           </div>
           <div>
               <input
+              required
               type="text"
               name="apellidos"
               id="lastname"
-              placeholder="Prado"
+              placeholder="Apellido"
               class="formbold-form-input"
               />
-              <label for="lastname" class="formbold-form-label"> Apellidos </label>
+              <!-- <label for="lastname" class="formbold-form-label"> Apellidos </label> -->
           </div>
         </div>
 
         <div class="formbold-input-flex">
           <div>
             <input
+            required
             type="number"
             name="edad"
             id="age"
-            placeholder="18"
+            placeholder="Edad"
             class="formbold-form-input"
             />
-            <label for="age" class="formbold-form-label"> Edad </label>
+            <!-- <label for="age" class="formbold-form-label"> Edad </label> -->
           </div>
           <div>
-              <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="test@gmail.com"
-              class="formbold-form-input"
-              />
-              <label for="email" class="formbold-form-label"> Email </label>
-          </div>
-          <div>
-              <input
-              type="text"
-              name="celular"
-              id="phone"
-              placeholder="3101234567"
-              class="formbold-form-input"
-              />
-              <label for="phone" class="formbold-form-label"> Celular </label>
+            <input
+            required
+            type="tel"
+            pattern="[3][0-9]{9}"
+            name="celular"
+            id="phone"
+            placeholder="Celular"
+            class="formbold-form-input"
+            />
+            <!-- <label for="phone" class="formbold-form-label"> Celular </label> -->
           </div>
         </div>
         <div class="formbold-input-flex">
           <div>
-              <input
-              type="number"
-              name="no_identificacion"
-              id="phone"
-              placeholder="4311862"
-              class="formbold-form-input"
-              />
-              <label for="phone" class="formbold-form-label"> Numero Identificacion </label>
-          </div>
+            <input
+            required
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            class="formbold-form-input"
+            />
+            <!-- <label for="email" class="formbold-form-label"> Email </label> -->
+        </div>
           <div>
               <input
-              type="date"
-              name="expedicion"
-              id="phone"
-              placeholder="13/07/2005"
+              required
+              type="number"
+              name="no_identificacion"
+              placeholder="Numero Identificacion"
               class="formbold-form-input"
               />
-              <label for="phone" class="formbold-form-label"> Fecha de expedicion</label>
+              <!-- <label for="phone" class="formbold-form-label"> Numero Identificacion </label> -->
+          </div>
+        </div>  
+        <div class="formbold-input-flex center">
+          <div>
+            <input
+            required
+            type="date"
+            name="expedicion"
+            id="expedition_date"
+            placeholder="Fecha Expedicion"
+            class="formbold-form-input"
+            />
+            <label for="expedition_date" class="formbold-form-label"> Fecha de expedicion</label>
           </div>
         </div>
-        
-      </form>
-      <button class="formbold-btn" onclick="SubForm()">
-          Enviar
-      </button>
+        <div>
+          <input
+          type="hidden"
+          name="code_id"
+          id="code_id"
+          placeholder="hidden"
+          class="formbold-form-input"
+          />
+      </div>
+      <div class="center">
+        <!-- <button id="form_submit" class="formbold-btn" onclick="SubForm()" type="submit"> -->
+          <button id="form_submit" class="formbold-btn">
+              Enviar
+          </button>
+          <!-- <button class="formbold-btn" onclick="getData()">
+              Test
+          </button> -->
+      </div>
+        </form>
   </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
