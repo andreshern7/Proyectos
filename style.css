@@ -199,6 +199,7 @@ body {
 
 [class*="option"] img{
   min-width: 150px;
+  max-width: 400px;
   width: 70%;
   background-color: white;
 }
