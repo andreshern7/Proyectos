@@ -2,19 +2,39 @@
 <html>
 <head>
 	<title>Formulario Inscripcion</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="ISO-8859-1">
 	<script
-		src="https://code.jquery.com/jquery-3.4.1.js"
+  src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		crossorigin="anonymous">
   </script>
   <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>PAYMENT INFO</h1>
-    <p>Este es tu codigo de Inscripcion. Anotalo es muy importante para validar y reservar tu pago</p>
-    <p id="code_id">CODE INFO</p>
+  <div class="center payment-container" >
+    <div class="information">
+      <h1 class="payment-title">INFORMACIÓN DE PAGO</h1>
+      <p class="payment-information">Este es tu codigo de Inscripcion. Anotalo es muy importante para validar y reservar tu pago</p>
+      <p id="code_id">CODE INFO</p>
+    </div>
+    <div class="qr-codes">
+      <div class="option-1 center">
+        <h3>BANCOLOMBIA</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Bancolombia QR Code">
+      </div>
+      <div class="option-2 center">
+        <h3>NEQUI</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Nequi QR Code">
+      </div>
+      <div class="option-3 center">
+        <h3>DAVIPLATA</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Daviplata QR Code">
+      </div>
+    </div>
+  </div>
   <script>
         const urlParams = new URLSearchParams(window.location.search);
         // 👇️ key1=value1&key2=value2

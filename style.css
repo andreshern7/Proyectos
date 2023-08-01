@@ -1,25 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carme&family=Bebas+Neue&family=Dancing+Script&display=swap");
 
 :root{
   --primary-color: rgb(255, 255, 255);
-  --secondary-color: #F0C26A
+  --secondary-color: #F0C26A;
+  --primary-font: "Bebas Neue";
+  --secondary-font: "Oswaldo";
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 500;
 }
+
+html {
+  height: 100%;
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   background-image: url("bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
   color: var(--primary-color);
   background-position: center center; 
+  margin: 0;
+  min-height: 100%;
 }
 
 .center{
@@ -29,11 +38,12 @@ body {
 }
 
 .title{
-  font-family: "Bebas neue";
+  font-family: var(--primary-font);
   font-weight: 500;
   font-size: 7rem;
   color: var(--primary-color);
   margin-bottom: -70px;
+  letter-spacing: 2px;
 }
 
 .subtitle{
@@ -159,4 +169,59 @@ body {
 }
 .formbold-btn:hover {
   box-shadow: 0px 3px 8px rgba(87, 85, 80, 0.5);
+}
+
+.payment-container{
+  margin: 0 10%;
+}
+
+.payment-title{
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.payment-information{
+  text-align: center;
+}
+
+.qr-codes{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 90%;
+}
+
+[class*="option"]{
+  margin: auto;
+}
+
+[class*="option"] img{
+  min-width: 150px;
+  width: 70%;
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .formbold-input-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .formbold-input-flex div{
+    width: 100%;
+  }
+  .formbold-form-input {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .formbold-form-label{
+    font-size: 15px;
+  }
+  .formbold-btn{
+    margin: 0;
+  }
+  .qr-codes{
+    flex-wrap: wrap;
+  }
 }
