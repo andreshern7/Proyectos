@@ -1,50 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Formulario Inscripcion</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta charset="ISO-8859-1">
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous">
-  </script>
-  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="center payment-container" >
-    <div class="information">
-      <h1 class="payment-title">INFORMACIÓN DE PAGO</h1>
-      <p class="payment-information">Este es tu codigo de Inscripcion. Anotalo es muy importante para validar y reservar tu pago</p>
-      <p class="payment-information" id="code_id">CÓDIGO: </p>
+  <head>
+    <title>Formulario Inscripcion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+    <script
+      src="https://kit.fontawesome.com/0eac84e0b4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 class="payment-banner">
+      VALOR APORTE POR ENTRADA: <span class="highlight">$35.000 COP</span>
+    </h2>
+
+    <div class="center payment-container">
+      <div class="information">
+        <h1 class="payment-title">CONFIRMACIÓN RESERVA</h1>
+        <div class="payment-information">
+          <h3>1. CONFIRMAR PAGO</h3>
+          <p id="phone-send-check">
+            Envía tu comprobante al siguiente número para confirmar tu pago:
+            <span class="highlight">3132850643</span>
+          </p>
+          <h3>2. CONFIRMAR INSCRIPCIÓN</h3>
+          <!-- <p> Este es tu código de Inscripción: Recuerda anotarlo, ya que con el
+            confirmaremos tu reserva y validaremos tu pago.
+          </p> -->
+          <p id="code_id">
+            Este es tu CÓDIGO DE INSCRIPCIÓN: <span class="highlight"></span>
+          </p>
+          <p>
+            Guarda este código, y envíalo junto con el comprobante de pago, para
+            que confirmemos tu reserva.
+          </p>
+          <p>
+            Una semana previa al evento, te llegará a tu correo el ticket de
+            ingreso al Stand Up Comedy
+          </p>
+        </div>
+      </div>
+      <div class="qr-codes">
+        <div class="option-1 center">
+          <!-- <i class="fa-solid fa-piggy-bank"></i> -->
+          <h3>
+            <img src="static/bancolombia_icon.png" alt="bancolombia_icon" />
+            BANCOLOMBIA
+          </h3>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="static/bancolombia_qr.jpg"
+                  alt="Bancolombia QR Code"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h2>Ruth García Mancera</h2>
+                <p>Cuenta de ahorros:</p>
+                <p>200-81369942</p>
+                <p>Cédula</p>
+                <p>40.414.064</p>
+              </div>
+            </div>
+          </div>
+          <button class="payment-information-click">Ver datos de pago</button>
+        </div>
+        <div class="option-2 center">
+          <h3>
+            <img src="static/nequi_icon.png" alt="bancolombia_icon" />
+            NEQUI
+          </h3>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="static/nequi_qr.png" alt="Nequi QR Code" />
+              </div>
+              <div class="flip-card-back">
+                <h2>Monica Navarro</h2>
+                <p>Telefono</p>
+                <p>3132850643</p>
+              </div>
+            </div>
+          </div>
+          <button class="payment-information-click">Ver datos de pago</button>
+        </div>
+        <div class="option-3 center">
+          <h3>
+            <img src="static/daviplata_icon.png" alt="bancolombia_icon" />
+            DAVIPLATA
+          </h3>
+          <div class="flip-card block">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  id="daviplata_qr"
+                  src="static/generic_qr_unabled.png"
+                  alt="Daviplata QR Code"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h1>Nombre titular</h1>
+                <p>Numero celular</p>
+                <p>Cédula</p>
+              </div>
+            </div>
+          </div>
+          <button class="payment-information-click block">
+            Ver datos de pago
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="qr-codes">
-      <div class="option-1 center">
-        <h3>BANCOLOMBIA</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Bancolombia QR Code">
-        <a href="#">enlace</a>
-      </div>
-      <div class="option-2 center">
-        <h3>NEQUI</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Nequi QR Code">
-        <a href="#">enlace</a>
-      </div>
-      <div class="option-3 center">
-        <h3>DAVIPLATA</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="Daviplata QR Code">
-        <a href="#">enlace</a>
-      </div>
-    </div>
-  </div>
-  <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        // 👇️ key1=value1&key2=value2
-        console.log(urlParams.toString());
-        const code_id = urlParams.get('code_id');
-        console.log(code_id); // 👉️ value1
-        document.querySelector("#code_id").innerHTML = `CÓDIGO: <b>${code_id}</b>`;
+
+    <script src="script.js"></script>
+    <script>
+      ready(
+        initial_alert(
+          "!Ya apartaste tu lugar¡ Ahora, realiza el aporte para asegurar tu entrada, consignando a través de nuestras cuentas."
+        )
+      );
+      // ----------------------------------------------
+      // ----------------------------------------------
+
+      const urlParams = new URLSearchParams(window.location.search);
+      // 👇️ key1=value1&key2=value2
+      console.log(urlParams.toString());
+      const code_id = urlParams.get("code_id");
+      console.log(code_id); // 👉️ value1
+      document.querySelector("#code_id span").innerHTML = `${code_id}`;
+      document
+        .querySelectorAll(".payment-information-click")
+        .forEach(clickElement => {
+          if (clickElement.classList.contains("block")) {
+            return;
+          }
+          clickElement.addEventListener("click", e => {
+            console.log(e.target);
+            console.log(e.target.previousElementSibling);
+            console.log(e.target.previousElementSibling.children);
+            console.log(e.target.previousElementSibling.children[0]);
+            e.target.previousElementSibling.children[0].classList.toggle(
+              "active"
+            );
+          });
+        });
+      // document
+      //   .getElementById("phone-send-check")
+      //   .addEventListener("click", e => {
+      //     console.log(e.target);
+      //     console.log(e.target.innerHTML);
+      //   });
     </script>
-</body>
+  </body>
 </html>

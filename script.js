@@ -6,60 +6,79 @@
 //     }
 //   })
 
-document.getElementById("myForm").addEventListener("submit", function(e){
+function ready(fn) {
+  if (document.readyState !== "loading") {
+    fn();
+    return;
+  }
+  document.addEventListener("DOMContentLoaded", fn);
+  // console.log("READY FUNCTION EXECUTED CORRECTLY");
+}
+
+function initial_alert(msg) {
+  alert(msg);
+}
+
+try {
+  document.getElementById("myForm").addEventListener("submit", function (e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    const code_id = uniqueId(12); 
+    const code_id = uniqueId(12);
     document.getElementById("code_id").value = code_id;
     // console.log(document.getElementById("code").value);
     $.ajax({
-        url:"https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/",
-        type:"post",
-        data:$("#myForm").serializeArray(),
-        success: function(){
-            alert("Datos registrados exitosamente")
-            $("#myForm")[0].reset()
-            location.href = `payment.html?code_id=${code_id}`;
-        },
-        error: function(){
-            alert("Hubo un error")
-        }
+      url: "https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/",
+      type: "post",
+      data: $("#myForm").serializeArray(),
+      success: function () {
+        alert(
+          'Tu registro ha sido completado. Oprime "OK" para recibir la información de pago'
+        );
+        $("#myForm")[0].reset();
+        location.href = `payment.html?code_id=${code_id}`;
+      },
+      error: function (e) {
+        console.log(e);
+        alert("Hubo un error");
+      },
     });
-})
+  });
+} catch (error) {}
 
-
-function getData(){
-    uniqueId(8)
-    $.ajax({
+function getData() {
+  uniqueId(8);
+  $.ajax({
     //url: https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/?query=[query]&dataFormat=[dataFormat],
     //url: "https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/?query=SELECT * FROM WZNnmisnCPT2ayZr WHERE id='1'",
     url: "https://api.apispreadsheets.com/data/WZNnmisnCPT2ayZr/",
     type: "get",
-    dataType: 'json',
+    dataType: "json",
     success: function (res) {
-        console.log(res)
-    }
-    })
+      console.log(res);
+    },
+  });
 }
 
-const uniqueId = (length=12) => {
-    id = parseInt(Math.ceil(Math.random() * Date.now()).toPrecision(length).toString().replace(".", ""));
-    // id = Math.ceil(Math.random() * Date.now()).toPrecision(length).toString().replace(".", "");
-    // id = Math.ceil(Math.random() * Date.now()).toPrecision(length);
-    id = insertEach(id.toString(), "-", 4);
-    return id;
-}
+const uniqueId = (length = 12) => {
+  id = parseInt(
+    Math.ceil(Math.random() * Date.now())
+      .toPrecision(length)
+      .toString()
+      .replace(".", "")
+  );
+  // id = Math.ceil(Math.random() * Date.now()).toPrecision(length).toString().replace(".", "");
+  // id = Math.ceil(Math.random() * Date.now()).toPrecision(length);
+  id = insertEach(id.toString(), "-", 4);
+  return id;
+};
 
 function insertAtIndex(str, substring, index) {
-    // str = "Hello my love"
-    // console.log(str.slice(6))
-    return str.slice(0, index) + substring + str.slice(index);
+  // str = "Hello my love"
+  // console.log(str.slice(6))
+  return str.slice(0, index) + substring + str.slice(index);
 }
 
-function insertEach(str, substring, index){
-    str = str.match(/.{1,4}/g) ?? [];
-    return str.join(substring);
+function insertEach(str, substring, index) {
+  str = str.match(/.{1,4}/g) ?? [];
+  return str.join(substring);
 }
-
-
-

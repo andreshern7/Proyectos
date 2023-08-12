@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Formulario Inscripcion</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta charset="ISO-8859-1">
-	<script
-		src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous">
-  </script>
-  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="title-wrap center">
-    <h1 class="title">STAND-UP</h1>
-    <h3 class="subtitle">comedy</h3>
-  </div>
-  <div class="formbold-main-wrapper">
-    <div class="formbold-form-wrapper">
-      <form id="myForm" action="#" method="POST">
+  <head>
+    <title>Formulario Inscripcion</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="ISO-8859-1" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="title-wrap center">
+      <h1 class="title">STAND-UP</h1>
+      <h3 class="subtitle">comedy</h3>
+    </div>
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form id="myForm" action="#" method="POST">
           <div class="formbold-input-flex">
             <div>
-                <input
+              <input
                 required
                 type="text"
                 name="nombres"
                 id="firstname"
                 placeholder="Nombre"
                 class="formbold-form-input"
-                />
-                <!-- <label for="firstname" class="formbold-form-label"> Nombres </label> -->
+              />
+              <!-- <label for="firstname" class="formbold-form-label"> Nombres </label> -->
             </div>
             <div>
-                <input
+              <input
                 required
                 type="text"
                 name="apellidos"
                 id="lastname"
                 placeholder="Apellido"
                 class="formbold-form-input"
-                />
-                <!-- <label for="lastname" class="formbold-form-label"> Apellidos </label> -->
+              />
+              <!-- <label for="lastname" class="formbold-form-label"> Apellidos </label> -->
             </div>
           </div>
 
           <div class="formbold-input-flex">
             <div>
               <input
-              required
-              type="number"
-              name="edad"
-              id="age"
-              placeholder="Edad"
-              class="formbold-form-input"
+                required
+                type="number"
+                name="edad"
+                id="age"
+                placeholder="Edad"
+                class="formbold-form-input"
               />
               <!-- <label for="age" class="formbold-form-label"> Edad </label> -->
             </div>
             <div>
               <input
-              required
-              type="tel"
-              pattern="[3][0-9]{9}"
-              name="celular"
-              id="phone"
-              placeholder="Celular"
-              class="formbold-form-input"
+                required
+                type="tel"
+                size="10"
+                pattern="[3][0-9]{9}"
+                name="celular"
+                id="phone"
+                placeholder="Celular"
+                class="formbold-form-input"
               />
               <!-- <label for="phone" class="formbold-form-label"> Celular </label> -->
             </div>
@@ -74,60 +75,71 @@
           <div class="formbold-input-flex">
             <div>
               <input
-              required
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              class="formbold-form-input"
+                required
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                class="formbold-form-input"
               />
               <!-- <label for="email" class="formbold-form-label"> Email </label> -->
-          </div>
+            </div>
             <div>
-                <input
+              <input
                 required
                 type="number"
                 name="no_identificacion"
-                placeholder="Numero Identificacion"
+                placeholder="Numero Identificación"
                 class="formbold-form-input"
-                />
-                <!-- <label for="phone" class="formbold-form-label"> Numero Identificacion </label> -->
+              />
+              <!-- <label for="phone" class="formbold-form-label"> Numero Identificacion </label> -->
             </div>
-          </div>  
+          </div>
           <div class="formbold-input-flex center">
             <div>
               <input
-              required
-              type="date"
-              name="expedicion"
-              id="expedition_date"
-              placeholder="Fecha Expedicion"
-              class="formbold-form-input"
+                required
+                type="date"
+                name="expedicion"
+                id="expedition_date"
+                placeholder="Fecha Expedición Del Documento"
+                max="2011-01-01"
+                class="formbold-form-input"
               />
-              <label for="expedition_date" class="formbold-form-label"> Fecha de expedicion</label>
+              <label for="expedition_date" class="formbold-form-label">
+                Expedición documento</label
+              >
             </div>
           </div>
           <div>
             <input
-            type="hidden"
-            name="code_id"
-            id="code_id"
-            placeholder="hidden"
-            class="formbold-form-input"
+              type="hidden"
+              name="code_id"
+              id="code_id"
+              placeholder="hidden"
+              class="formbold-form-input"
             />
-        </div>
-        <div class="center">
-          <!-- <button id="form_submit" class="formbold-btn" onclick="SubForm()" type="submit"> -->
-            <button id="form_submit" class="formbold-btn">
-                Enviar
-            </button>
+          </div>
+          <div class="center">
+            <!-- <button id="form_submit" class="formbold-btn" onclick="SubForm()" type="submit"> -->
+            <button id="form_submit" class="formbold-btn">Enviar</button>
             <!-- <button class="formbold-btn" onclick="getData()">
                 Test
             </button> -->
-        </div>
-          </form>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-<script src="script.js"></script>
-</body>
+    <div class="title-wrap center test">
+      <h1 class="title" style="font-size: 1.8rem">#relacionessinfiltros</h1>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      ready(
+        initial_alert(
+          "Aparta tu lugar en el Stand Up Comedy: Relaciones sin filtros, completando el siguiente formulario."
+        )
+      );
+    </script>
+  </body>
 </html>
